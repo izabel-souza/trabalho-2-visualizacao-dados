@@ -1,0 +1,46 @@
+{
+    "data": {
+      "url": "dados/data_results.json"
+    },
+    "transform": [
+      {
+        "filter": "(datum.home_team == 'Brazil' && datum.away_team == 'Argentina') || (datum.home_team == 'Argentina' && datum.away_team == 'Brazil')"
+      },
+      {
+        "calculate": "datum.home_score > datum.away_score ? datum.home_team : (datum.away_score > datum.home_score ? datum.away_team : 'Empate')",
+        "as": "vencedor"
+      },
+      {
+        "calculate": "datum.home_team + ' x ' + datum.away_team",
+        "as": "confronto"
+      }
+    ],
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": "Data do Jogo"
+      },
+      "y": {
+        "field": "vencedor",
+        "type": "nominal",
+        "title": "Resultado"
+      },
+      "color": {
+        "field": "vencedor",
+        "type": "nominal",
+        "title": "Vencedor",
+        "scale": {"scheme": "category10"}
+      },
+      "tooltip": [
+        {"field": "date", "type": "temporal", "title": "Data"},
+        {"field": "home_team", "type": "nominal", "title": "Time da Casa"},
+        {"field": "away_team", "type": "nominal", "title": "Time Visitante"},
+        {"field": "home_score", "type": "quantitative", "title": "Placar Casa"},
+        {"field": "away_score", "type": "quantitative", "title": "Placar Visitante"},
+        {"field": "vencedor", "type": "nominal", "title": "Vencedor"}
+      ]
+    }
+  }
+  

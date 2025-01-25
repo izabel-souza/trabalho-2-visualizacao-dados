@@ -1,0 +1,44 @@
+{
+    "data": {
+      "url": "dados/data_results.json"
+    },
+    "transform": [
+      {
+        "filter": "datum.country == datum.home_team"
+      },
+      {
+        "calculate": "datum.home_score > datum.away_score ? 'Vitória' : (datum.home_score == datum.away_score ? 'Empate' : 'Derrota')",
+        "as": "resultado"
+      },
+      {
+        "aggregate": [{"op": "count", "as": "quantidade"}],
+        "groupby": ["country", "resultado"]
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "country",
+        "type": "nominal",
+        "title": "País Anfitrião",
+        "axis": {"labelAngle": -45}
+      },
+      "y": {
+        "field": "quantidade",
+        "type": "quantitative",
+        "title": "Número de Jogos"
+      },
+      "color": {
+        "field": "resultado",
+        "type": "nominal",
+        "title": "Resultado",
+        "scale": {"scheme": "set1"}
+      },
+      "tooltip": [
+        {"field": "country", "type": "nominal", "title": "País"},
+        {"field": "resultado", "type": "nominal", "title": "Resultado"},
+        {"field": "quantidade", "type": "quantitative", "title": "Quantidade"}
+      ]
+    }
+  }
+  

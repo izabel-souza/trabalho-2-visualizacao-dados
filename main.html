@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Visualização de Dados - Trabalho 2</title>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vega"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .vis-container {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Visualização de Dados - Trabalho 2</h1>
+
+    <h3>Distribuição de Partidas por Ano</h3>
+    <div id="partidaPorAno" class="vis-container"></div>
+
+    <h3>Mapa de Calor de Placar de Jogos</h3>
+    <div id="placarDeJogos" class="vis-container"></div>
+
+    <h3>Vitórias por País</h3>
+    <div id="vitoriaPorPais" class="vis-container"></div>
+
+    <h3>Proporção de Jogos Empatados</h3>
+    <div id="proporcaoJogosEmpatados" class="vis-container"></div>
+
+    <h3>Gols por Jogo ao Longo do Tempo</h3>
+    <div id="golsPorJogo" class="vis-container"></div>
+
+    <h3>Desempenho de Países-Sede em Competições Locais</h3>
+    <div id="desempenhoCompeticoesLocais" class="vis-container"></div>
+
+    <h3>Histórico de Partidas Entre Dois Países Específicos</h3>
+    <div id="historicoPaisesEspecificos" class="vis-container"></div>
+
+    <script>
+        // Gráfico 1: Distribuição de Partidas por Ano
+        fetch("graficos/partidasPorAno.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#partidaPorAno', out);
+            })
+            .catch(err => { throw err });
+
+        // Gráfico 2: Mapa de Calor de Placar de Jogos
+        fetch("graficos/placarDeJogos.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#placarDeJogos', out);
+            })
+            .catch(err => { throw err });
+
+        // Gráfico 3: Vitórias por País
+        fetch("graficos/vitoriaPorPais.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#vitoriaPorPais', out);
+            })
+            .catch(err => { throw err });
+
+        //Gráfico 4: Proporção de Jogos Empatados
+        fetch("graficos/proporcaoJogosEmpatados.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#proporcaoJogosEmpatados', out);
+            })
+            .catch(err => { throw err });
+        
+        // Gráfico 5: Gols por Jogo ao Longo do Tempo
+        fetch("graficos/golsPorJogo.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#golsPorJogo', out);
+            })
+            .catch(err => { throw err });
+
+        //Grafíco 6: Desempenho de Países-Sede em Competições Locais
+        fetch("graficos/desempenhoPaisCompeticoesLocais.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#desempenhoCompeticoesLocais', out);
+            })
+            .catch(err => { throw err });
+
+        //Grafíco 7: Histórico de Partidas Entre Dois Países Específicos
+                fetch("graficos/historicoPaisesEspecificos.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#historicoPaisesEspecificos', out);
+            })
+            .catch(err => { throw err });
+
+    </script>
+</body>
+
+</html>

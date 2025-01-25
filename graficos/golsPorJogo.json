@@ -1,0 +1,53 @@
+{
+    "data": {
+      "url": "dados/data_results.json"
+    },
+    "transform": [
+      {
+        "calculate": "year(datum.date)",
+        "as": "year"
+      },
+      {
+        "calculate": "floor(datum.year / 10) * 10",
+        "as": "decade"
+      },
+      {
+        "calculate": "datum.home_score + datum.away_score",
+        "as": "total_goals"
+      },
+      {
+        "aggregate": [
+          {"op": "mean", "field": "total_goals", "as": "avg_goals"}
+        ],
+        "groupby": ["decade"]
+      }
+    ],
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "decade",
+        "type": "ordinal",
+        "title": "Década",
+        "axis": {"labelAngle": -45}
+      },
+      "y": {
+        "field": "avg_goals",
+        "type": "quantitative",
+        "title": "Média de Gols por Jogo"
+      },
+      "tooltip": [
+        {"field": "decade", "type": "ordinal", "title": "Década"},
+        {"field": "avg_goals", "type": "quantitative", "title": "Média de Gols", "format": ".2f"}
+      ]
+    },
+    "config": {
+      "line": {
+        "point": true,
+        "color": "#1f77b4"
+      },
+      "axis": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      }
+    }
+}  

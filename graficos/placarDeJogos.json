@@ -1,0 +1,31 @@
+{
+    "data": {
+      "url": "dados/data_results.json"
+    },
+    "transform": [
+      {
+        "aggregate": [{"op": "count", "as": "count"}],
+        "groupby": ["home_score", "away_score"]
+      }
+    ],
+    "mark": "rect",
+    "encoding": {
+      "x": {
+        "field": "home_score",
+        "type": "ordinal",
+        "title": "Gols do Time da Casa"
+      },
+      "y": {
+        "field": "away_score",
+        "type": "ordinal",
+        "title": "Gols do Time Visitante"
+      },
+      "color": {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Frequência",
+        "scale": {"scheme": "blues"}
+      }
+    }
+  }
+  
