@@ -41,7 +41,7 @@
 **Análise**:Avaliar se há picos específicos, como no final do primeiro tempo (cansaço dos jogadores) ou nos últimos minutos do segundo tempo (pressão para decidir o jogo).
 
 
-<h3>Gráfico Dinâmico:</h3>
+<h3>Gráficos Dinâmicos:</h3>
 
 9️⃣ **Análise Interativa de Gols por País e Década**
 **Descrição**: Um gráfico de dispersão onde você pode selecionar um país e década para ver a relação entre gols do time da casa e visitante.
