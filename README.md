@@ -11,7 +11,7 @@
 **Análise**: Identificar placares comuns, como 1x0 ou 2x1.
 
 3️⃣ **Vitórias por Continente (Agregado)**
-**Descrição****: Um gráfico de barras empilhadas mostrando as vitórias agregadas de times de diferentes continentes.
+**Descrição**: Um gráfico de barras empilhadas mostrando as vitórias agregadas de times de diferentes continentes.
 **Motivação**: Comparar o desempenho geral por região.
 **Análise**: Ver qual continente domina o futebol internacional.
 
@@ -41,6 +41,8 @@
 **Análise**:Avaliar se há picos específicos, como no final do primeiro tempo (cansaço dos jogadores) ou nos últimos minutos do segundo tempo (pressão para decidir o jogo).
 
 
+<br>
+<br>
 <h3>Gráficos Dinâmicos:</h3>
 
 9️⃣ **Análise Interativa de Gols por País e Década**

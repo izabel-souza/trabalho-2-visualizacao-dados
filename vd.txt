@@ -1,0 +1,3 @@
+Dupla: Guilherme Marques Vieira e Izabel Cristina de Souza Soares
+github: https://github.com/izabel-souza/trabalho-2-visualizacao-dados
+kaggle: https://www.kaggle.com/datasets/martj42/international-football-results-from-1872-to-2017
