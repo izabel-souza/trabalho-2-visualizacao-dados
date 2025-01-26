@@ -1,0 +1,75 @@
+{
+    "data": {
+      "url": "dados/data_results.json"
+    },
+    "transform": [
+      {
+        "calculate": "year(datum.date)",
+        "as": "year"
+      },
+      {
+        "calculate": "floor(datum.year / 10) * 10",
+        "as": "decade"
+      }
+    ],
+    "params": [
+      {
+        "name": "selectedCountry",
+        "value": "Brazil",
+        "bind": {
+          "input": "select",
+          "options": ["Argentina", "Brazil", "England", "France", "Germany", "Italy", "Spain", "Uruguay"],
+          "name": "Selecione o País: "
+        }
+      },
+      {
+        "name": "selectedDecade",
+        "value": 1980,
+        "bind": {
+          "input": "select",
+          "options": [1870, 1880, 1890, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010],
+          "name": "Selecione a Década: "
+        }
+      }
+    ],
+    "transform": [
+      {
+        "filter": "(datum.home_team == selectedCountry || datum.away_team == selectedCountry) && datum.decade == selectedDecade"
+      }
+    ],
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "home_score",
+        "type": "quantitative",
+        "title": "Gols do Time da Casa"
+      },
+      "y": {
+        "field": "away_score",
+        "type": "quantitative",
+        "title": "Gols do Time Visitante"
+      },
+      "color": {
+        "field": "home_team",
+        "type": "nominal",
+        "title": "Time da Casa"
+      },
+      "tooltip": [
+        {"field": "date", "type": "temporal", "title": "Data"},
+        {"field": "home_team", "type": "nominal", "title": "Time da Casa"},
+        {"field": "away_team", "type": "nominal", "title": "Time Visitante"},
+        {"field": "home_score", "type": "quantitative", "title": "Gols da Casa"},
+        {"field": "away_score", "type": "quantitative", "title": "Gols do Visitante"}
+      ]
+    },
+    "config": {
+      "axis": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      },
+      "legend": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      }
+    }
+}  

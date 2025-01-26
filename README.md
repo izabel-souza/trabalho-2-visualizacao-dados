@@ -39,9 +39,7 @@
 
 <h3>Gráfico Dinâmico:</h3>
 
-8️⃣ **Análise Interativa de Gols por Continente e Década**
-**Descrição**: Um gráfico de dispersão onde você pode selecionar um continente e década para ver a relação entre gols do time da casa e visitante.
+8️⃣ **Análise Interativa de Gols por País e Década**
+**Descrição**: Um gráfico de dispersão onde você pode selecionar um país e década para ver a relação entre gols do time da casa e visitante.
 **Motivação**: Permitir uma análise detalhada de tendências regionais e temporais.
 **Análise**: Identificar mudanças regionais no estilo de jogo ao longo das décadas.
-
-
