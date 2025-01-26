@@ -1,6 +1,4 @@
-‼️ Gráfico 4 não renderizando 
 ‼️ Falta gráfico dinâmico
-
 
 <h3>Gráficos estáticos:</h3>
 

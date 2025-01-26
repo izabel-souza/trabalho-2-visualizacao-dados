@@ -1,4 +1,5 @@
 {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
     "url": "dados/data_results.json"
   },
@@ -8,11 +9,18 @@
       "as": "resultado"
     },
     {
-      "aggregate": [{"op": "count", "as": "quantidade"}],
+      "aggregate": [
+        {"op": "count", "as": "quantidade"}
+      ],
       "groupby": ["resultado"]
     },
     {
-      "calculate": "datum.quantidade / sum(datum.quantidade)",
+      "joinaggregate": [
+        {"op": "sum", "field": "quantidade", "as": "total_jogos"}
+      ]
+    },
+    {
+      "calculate": "datum.quantidade / datum.total_jogos",
       "as": "proporcao"
     }
   ],
@@ -27,7 +35,7 @@
       "field": "resultado",
       "type": "nominal",
       "title": "Resultado",
-      "scale": {"scheme": "category10"}
+      "scale": {"scheme": "darkblue"}
     },
     "tooltip": [
       {"field": "resultado", "type": "nominal", "title": "Resultado"},
