@@ -1,4 +1,4 @@
-‼️ Falta gráfico dinâmico
+‼️Grafico dinamico esta nao funcionando
 
 <h3>Gráficos estáticos:</h3>
 

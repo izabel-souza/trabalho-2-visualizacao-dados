@@ -15,10 +15,9 @@
     "params": [
       {
         "name": "selectedCountry",
-        "value": "Brazil",
         "bind": {
           "input": "select",
-          "options": ["Argentina", "Brazil", "England", "France", "Germany", "Italy", "Spain", "Uruguay"],
+          "options": ["Albania", "Argentina", "Austria", "Belgium", "Brazil", "Bulgaria", "England", "France", "Germany", "Italy", "Spain", "Uruguay"],
           "name": "Selecione o País: "
         }
       },
