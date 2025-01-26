@@ -8,22 +8,31 @@
         "as": "year"
       },
       {
+        "calculate": "floor(datum.year / 10) * 10",
+        "as": "decade"
+      },
+      {
         "aggregate": [{"op": "count", "as": "matches"}],
-        "groupby": ["year"]
+        "groupby": ["decade"]
       }
     ],
     "mark": "bar",
     "encoding": {
       "x": {
-        "field": "year",
+        "field": "decade",
         "type": "ordinal",
-        "title": "Ano",
+        "title": "Década",
         "axis": {"labelAngle": -45}
       },
       "y": {
         "field": "matches",
         "type": "quantitative",
         "title": "Número de Partidas"
+      },
+      "color": {
+        "field": "decade",
+        "scale": {"scheme": "darkblue"},
+        "legend": null
       }
     }
 }

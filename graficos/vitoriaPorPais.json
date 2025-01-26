@@ -13,6 +13,13 @@
     {
       "aggregate": [{"op": "count", "as": "victories"}],
       "groupby": ["winner"]
+    },
+    {
+      "window": [{"op": "rank", "as": "rank"}],
+      "sort": [{"field": "victories", "order": "descending"}]
+    },
+    {
+      "filter": "datum.rank <= 70"
     }
   ],
   "mark": "bar",
@@ -32,6 +39,7 @@
     "color": {
       "field": "winner",
       "type": "nominal",
+      "scale": {"scheme": "darkblue"},
       "legend": null
     }
   },

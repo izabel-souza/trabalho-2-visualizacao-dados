@@ -1,8 +1,8 @@
 {
-    "data": {
-      "url": "dados/data_results.json"
-    },
-    "transform": [
+  "data": {
+  "url": "dados/data_results.json"
+  },
+   "transform": [
       {
         "aggregate": [{"op": "count", "as": "count"}],
         "groupby": ["home_score", "away_score"]
@@ -24,8 +24,7 @@
         "field": "count",
         "type": "quantitative",
         "title": "Frequência",
-        "scale": {"scheme": "blues"}
+        "scale": {"scheme": "turbo"}
       }
     }
-  }
-  
+}

@@ -31,7 +31,7 @@
         "field": "vencedor",
         "type": "nominal",
         "title": "Vencedor",
-        "scale": {"scheme": "category10"}
+        "scale": {"scheme": "darkblue"}
       },
       "tooltip": [
         {"field": "date", "type": "temporal", "title": "Data"},
