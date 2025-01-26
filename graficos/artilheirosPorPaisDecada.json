@@ -1,0 +1,175 @@
+{
+    "data": {
+      "url": "dados/artilheiros.json"
+    },
+    "transform": [
+      {
+        "calculate": "year(toDate(datum.date))",
+        "as": "year"
+      },
+      {
+        "calculate": "floor(year(toDate(datum.date)) / 10) * 10",
+        "as": "decade"
+      },
+      {
+        "filter": "(selectedCountry == 'All' || datum.team == selectedCountry) && (selectedDecade == 'All' || datum.decade == selectedDecade)"
+      },
+      {
+        "aggregate": [
+          {
+            "op": "count",
+            "as": "goals"
+          }
+        ],
+        "groupby": ["scorer", "team"]
+      },
+      {
+        "window": [
+          {
+            "op": "rank",
+            "as": "rank"
+          }
+        ],
+        "sort": [
+          {
+            "field": "goals",
+            "order": "descending"
+          }
+        ]
+      },
+      {
+        "filter": "datum.rank <= 10"
+      }
+    ],
+    "params": [
+      {
+        "name": "selectedCountry",
+        "value": "All",
+        "bind": {
+          "input": "select",
+          "options": [
+            "All",
+            "Argentina",
+            "Austria",
+            "Belgium",
+            "Brazil",
+            "Colombia",
+            "Croatia",
+            "Denmark",
+            "Ecuador",
+            "England",
+            "France",
+            "Germany",
+            "Iran",
+            "Italy",
+            "Japan",
+            "Mexico",
+            "Morocco",
+            "Netherlands",
+            "Poland",
+            "Senegal",
+            "South Korea",
+            "Spain",
+            "Sweden",
+            "Switzerland",
+            "United States",
+            "Uruguay"
+          ],
+          "name": "Selecione o País: "
+        }
+      },
+      {
+        "name": "selectedDecade",
+        "value": "All",
+        "bind": {
+          "input": "select",
+          "options": [
+            "All",
+            1870,
+            1880,
+            1890,
+            1900,
+            1910,
+            1920,
+            1930,
+            1940,
+            1950,
+            1960,
+            1970,
+            1980,
+            1990,
+            2000,
+            2010,
+            2020
+          ],
+          "name": "Selecione a Década: "
+        }
+      }
+    ],
+    "mark": {
+      "type": "bar",
+      "tooltip": true
+    },
+    "encoding": {
+      "x": {
+        "field": "scorer",
+        "type": "nominal",
+        "title": "Artilheiro",
+        "sort": "-y",
+        "axis": {
+          "labelAngle": -45
+        }
+      },
+      "y": {
+        "field": "goals",
+        "type": "quantitative",
+        "title": "Número de Gols"
+      },
+      "color": {
+        "field": "goals",
+        "type": "quantitative",
+        "scale": {
+          "scheme": "blues"
+        },
+        "legend": {
+          "title": "Número de Gols"
+        }
+      },
+      "tooltip": [
+        {
+          "field": "scorer",
+          "type": "nominal",
+          "title": "Jogador"
+        },
+        {
+          "field": "goals",
+          "type": "quantitative",
+          "title": "Gols"
+        },
+        {
+          "field": "team",
+          "type": "nominal",
+          "title": "Time"
+        },
+        {
+          "field": "decade",
+          "type": "ordinal",
+          "title": "Década"
+        }
+      ]
+    },
+    "config": {
+      "axis": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      },
+      "legend": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      },
+      "bar": {
+        "cornerRadiusEnd": 3
+      }
+    }
+  }
+  

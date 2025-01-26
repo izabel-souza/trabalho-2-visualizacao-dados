@@ -1,0 +1,69 @@
+{
+    "data": {
+      "url": "dados/artilheiros.json"
+    },
+    "transform": [
+      {
+        "calculate": "year(toDate(datum.date))",
+        "as": "year"
+      },
+      {
+        "calculate": "floor(year(toDate(datum.date)) / 10) * 10",
+        "as": "decade"
+      },
+      {
+        "filter": "datum.minute != null && datum.minute >= 0"
+      },
+      {
+        "aggregate": [
+          {
+            "op": "count",
+            "field": "minute",
+            "as": "total_goals"
+          }
+        ],
+        "groupby": ["minute"]
+      }
+    ],
+    "width": 600,
+    "height": 300,
+    "mark": "line",
+    "encoding": {
+      "x": {
+        "field": "minute",
+        "type": "ordinal",
+        "title": "Gols por Minuto de Jogo",
+        "axis": {
+          "labels": false 
+        }
+      },
+      "y": {
+        "field": "total_goals",
+        "type": "quantitative",
+        "title": "Total de Gols"
+      },
+      "tooltip": [
+        {
+          "field": "minute",
+          "type": "ordinal",
+          "title": "Minuto"
+        },
+        {
+          "field": "total_goals",
+          "type": "quantitative",
+          "title": "Total de Gols"
+        }
+      ]
+    },
+    "config": {
+      "line": {
+        "point": true,
+        "color": "#1f77b4"
+      },
+      "axis": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      }
+    }
+  }
+  

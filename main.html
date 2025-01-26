@@ -125,9 +125,19 @@
         <div id="historicoPaisesEspecificos" class="vis-container"></div>
     </div>
 
+    <div class="centered-div">
+        <h3>Total de Gols por Minuto de Jogo</h3>
+        <div id="golsPorMinuto" class="vis-container"></div>
+    </div>
+
     <div>
         <h3>Análise Interativa de Gols por País e Década</h3>
         <div id="golsPorPaisDecada"></div>
+    </div>
+
+    <div>
+        <h3>Análise Interativa de Artilheiros por País e Década</h3>
+        <div id="artilheirosPorPaisDecada"></div>
     </div>
 
     <!-- scripts para os gráficos -->
@@ -172,7 +182,7 @@
             })
             .catch(err => { throw err });
 
-        //Grafíco 6: Desempenho de Países-Sede em Competições Locais
+        //Gráfico 6: Desempenho de Países-Sede em Competições Locais
         fetch("graficos/desempenhoPaisCompeticoesLocais.json")
             .then(res => res.json())
             .then(out => {
@@ -180,7 +190,7 @@
             })
             .catch(err => { throw err });
 
-        //Grafíco 7: Histórico de Partidas Entre Dois Países Específicos
+        //Gráfico 7: Histórico de Partidas Entre Dois Países Específicos
         fetch("graficos/historicoPaisesEspecificos.json")
             .then(res => res.json())
             .then(out => {
@@ -188,12 +198,28 @@
             })
             .catch(err => { throw err });
 
+        //Gráfico 8: Gols por Minuto de Jogo
+        fetch("graficos/golsPorMinuto.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#golsPorMinuto', out);
+            })
+            .catch(err => { throw err });
 
-        //Grafíco 8: *Análise Interativa de Gols por País e Década
+
+        //Gráfico 9: *Análise Interativa de Gols por País e Década
         fetch("graficos/golsPorPaisDecada.json")
             .then(res => res.json())
             .then(out => {
                 vegaEmbed('#golsPorPaisDecada', out);
+            })
+            .catch(err => { throw err });
+
+        //Gráfico 10: *Análise Interativa de Artilheiros por País e Década
+        fetch("graficos/artilheirosPorPaisDecada.json")
+            .then(res => res.json())
+            .then(out => {
+                vegaEmbed('#artilheirosPorPaisDecada', out);
             })
             .catch(err => { throw err });
 
