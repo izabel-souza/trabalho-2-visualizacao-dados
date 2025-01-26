@@ -129,7 +129,7 @@
         "field": "goals",
         "type": "quantitative",
         "scale": {
-          "scheme": "blues"
+          "scheme": "turbo"
         },
         "legend": {
           "title": "Número de Gols"

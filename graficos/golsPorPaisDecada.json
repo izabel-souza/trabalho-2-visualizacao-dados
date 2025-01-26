@@ -63,7 +63,8 @@
     "color": {
       "field": "home_team",
       "type": "nominal",
-      "title": "Time da Casa"
+      "title": "Time da Casa",
+      "scale": {"scheme": "turbo"}
     },
     "tooltip": [
       { "field": "date", "type": "temporal", "title": "Data" },

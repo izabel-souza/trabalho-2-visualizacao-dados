@@ -62,10 +62,10 @@
             margin: 10px 0;
         }
 
-        #heatmap {
+        #heatmap, #goalsPerMinute, #goalsCountryDecade, #strikerPerCountryDecade {
             height: 90vh;
         }
-
+        
         .centered-div {
             border-bottom: 2px solid #adacac;
             height: 60vh;
@@ -125,17 +125,17 @@
         <div id="historicoPaisesEspecificos" class="vis-container"></div>
     </div>
 
-    <div class="centered-div">
+    <div id="goalsPerMinute" class="centered-div">
         <h3>Total de Gols por Minuto de Jogo</h3>
         <div id="golsPorMinuto" class="vis-container"></div>
     </div>
 
-    <div>
+    <div id="goalsCountryDecade" class="centered-div">
         <h3>Análise Interativa de Gols por País e Década</h3>
         <div id="golsPorPaisDecada"></div>
     </div>
 
-    <div>
+    <div id="strikerPerCountryDecade" class="centered-div">
         <h3>Análise Interativa de Artilheiros por País e Década</h3>
         <div id="artilheirosPorPaisDecada"></div>
     </div>
