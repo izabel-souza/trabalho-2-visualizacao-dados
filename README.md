@@ -30,12 +30,7 @@
 **Motivação**: Explorar a "vantagem de jogar em casa".
 **Análise**: Avaliar se países-sede têm melhor desempenho.
 
-7️⃣ **Histórico de Partidas Entre Dois Países Específicos**
-**Descrição**: Um gráfico de linha ou barras mostrando o resultado de jogos entre dois rivais históricos, como Brasil x Argentina.
-**Motivação**: Explorar rivalidades marcantes.
-**Análise**: Mostrar o equilíbrio (ou falta dele) em confrontos históricos.
-
-8️⃣ **Total de Gols por Minuto de Jogo**
+7️⃣ **Total de Gols por Minuto de Jogo**
 **Descrição**: Um gráfico de barras mostrando a quantidade total de gols marcados em cada minuto de jogo. Este gráfico considera tanto os gols marcados pelo time da casa quanto pelo visitante e agrupa os dados por minuto.
 **Motivação**:Entender em quais momentos de uma partida os gols tendem a ser mais frequentes. Isso pode revelar tendências, como maior número de gols em momentos decisivos (ex.: início, final do jogo ou após substituições).
 **Análise**:Avaliar se há picos específicos, como no final do primeiro tempo (cansaço dos jogadores) ou nos últimos minutos do segundo tempo (pressão para decidir o jogo).
@@ -45,12 +40,17 @@
 <br>
 <h3>Gráficos Dinâmicos:</h3>
 
-9️⃣ **Análise Interativa de Gols por País e Década**
+8️⃣ **Análise Interativa de Gols por País e Década**
 **Descrição**: Um gráfico de dispersão onde você pode selecionar um país e década para ver a relação entre gols do time da casa e visitante.
 **Motivação**: Permitir uma análise detalhada de tendências regionais e temporais.
 **Análise**: Identificar mudanças regionais no estilo de jogo ao longo das décadas.
 
-1️⃣0️⃣ **Análise Interativa de Artilheiros por País e Década**
+9️⃣ **Análise Interativa de Artilheiros por País e Década**
 **Descrição**: Um gráfico interativo de barras mostrando o número total de gols marcados por diferentes artilheiros de um país em uma década selecionada. O eixo X representa os artilheiros, enquanto o eixo Y mostra a quantidade de gols marcados. Contém dois campos de seleção:
 **Motivação**: Fornecer uma análise detalhada do desempenho de grandes artilheiros ao longo do tempo, destacando os jogadores mais prolíficos de cada país em diferentes períodos.
 **Análise**: Identificar épocas dominadas por um único artilheiro ou épocas mais equilibradas, com vários jogadores contribuindo significativamente.
+
+1️⃣0️⃣ **Histórico de Partidas Entre Dois Países Específicos**
+**Descrição**: Um gráfico de linha ou barras mostrando o resultado de jogos entre dois rivais históricos, como Brasil x Argentina.
+**Motivação**: Explorar rivalidades marcantes.
+**Análise**: Mostrar o equilíbrio (ou falta dele) em confrontos históricos.
