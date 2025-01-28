@@ -1,4 +1,6 @@
 {
+  "width": 800,
+  "height": 250,
   "data": {
     "url": "dados/data_results.json"
   },
